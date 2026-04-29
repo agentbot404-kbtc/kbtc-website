@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" data-lang="en">
+<html lang="en" data-theme="light" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -521,8 +521,8 @@
       </ul>
       <div class="nav-controls">
         <button class="toggle-btn" id="themeToggle" title="Toggle theme">
-          <span class="icon" id="themeIcon">☀️</span>
-          <span id="themeLabel">Light</span>
+          <span class="icon" id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
         </button>
         <a href="https://t.me/KBTCChannel" target="_blank" class="btn btn-outline" style="padding:9px 18px;font-size:11px;" data-i18n="nav.join">Join ↗</a>
       </div>
@@ -726,7 +726,7 @@
 
     <!-- Row 2: Other Exchanges -->
     <div class="partners-row-label" style="margin-top:40px;">Other Exchanges</div>
-    <div class="social-grid">
+    <div class="social-grid" style="grid-template-columns:repeat(4,1fr);">
 
       <a class="social-card" href="https://www.binance.info/join?ref=KBTC168" target="_blank" rel="noopener">
         <div class="social-icon">
@@ -991,7 +991,7 @@ function applyLang(lang) {
 */
 
 // ─── Theme ───────────────────────────────────────────
-let isDark = true;
+let isDark = false;
 document.getElementById('themeToggle').addEventListener('click', () => {
   isDark = !isDark;
   document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
