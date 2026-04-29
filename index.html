@@ -417,64 +417,14 @@
     /* ── Social ── */
     /* ── Partners ── */
     #partners { padding: 130px 0; border-top: 1px solid var(--border); }
-    .partners-group { margin-top: 64px; }
-    .partners-group-label {
+    .partners-row-label {
       font-size: 11px; font-weight: 600;
       letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 24px;
+      color: var(--muted); margin-bottom: 24px; margin-top: 64px;
       display: flex; align-items: center; gap: 12px;
     }
-    .partners-group-label::before {
+    .partners-row-label::before {
       content: ''; display: block; width: 16px; height: 1px; background: var(--muted);
-    }
-    .partners-grid {
-      display: grid; gap: 1px;
-      background: var(--border); border: 1px solid var(--border);
-    }
-    .partners-grid.main { grid-template-columns: repeat(3, 1fr); }
-    .partners-grid.other { grid-template-columns: repeat(4, 1fr); }
-    .partner-card {
-      background: var(--bg);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 16px; padding: 40px 28px;
-      text-decoration: none; color: var(--text);
-      position: relative; overflow: hidden;
-      transition: background 0.25s;
-    }
-    .partner-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% 0%, rgba(128,128,128,0.07) 0%, transparent 70%);
-      opacity: 0; transition: opacity 0.25s;
-    }
-    .partner-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px; background: var(--text);
-      transform: scaleX(0); transition: transform 0.25s;
-    }
-    .partner-card:hover { background: var(--bg3); }
-    .partner-card:hover::before { opacity: 1; }
-    .partner-card:hover::after { transform: scaleX(1); }
-    .partner-name {
-      font-size: 16px; font-weight: 800;
-      letter-spacing: 0.04em; text-transform: uppercase;
-    }
-    .partner-tag {
-      font-size: 10px; font-weight: 500;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--muted);
-    }
-    .partner-btn {
-      margin-top: 4px;
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      border: 1px solid var(--border);
-      padding: 6px 14px; border-radius: 2px;
-      color: var(--dim); transition: all 0.2s;
-    }
-    .partner-card:hover .partner-btn { border-color: var(--text); color: var(--text); }
-    @media (max-width: 768px) {
-      .partners-grid.main { grid-template-columns: 1fr; }
-      .partners-grid.other { grid-template-columns: repeat(2, 1fr); }
     }
 
     #social { padding: 130px 0; border-top: 1px solid var(--border); }
@@ -731,55 +681,101 @@
   <div class="container">
     <div class="section-tag">Our Partners</div>
     <h2 class="section-title">Trusted<br/>Partners.</h2>
-    <p class="section-desc">Exclusive partnerships with leading exchanges and brokers — giving KBTC members better rates, higher rebates, and priority support.</p>
+    <p class="section-desc">Exclusive partnerships with leading exchanges and brokers — KBTC members get better rates, higher rebates, and priority support.</p>
 
-    <!-- Main Partners -->
-    <div class="partners-group">
-      <div class="partners-group-label">Main Partners — Crypto Exchange &amp; Broker</div>
-      <div class="partners-grid main">
-        <a href="https://okx.cab/join/KBTC2026" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-name">OKX</div>
-          <div class="partner-tag">Crypto Exchange</div>
-          <div class="partner-btn">Join ↗</div>
-        </a>
-        <a href="https://investizo.com/?pid=904429" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-name">Investizo</div>
-          <div class="partner-tag">Forex Broker</div>
-          <div class="partner-btn">Join ↗</div>
-        </a>
-        <a href="https://my.litefinance-kh.com/?uid=490808944" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-name">LiteFinance</div>
-          <div class="partner-tag">Forex Broker</div>
-          <div class="partner-btn">Join ↗</div>
-        </a>
-      </div>
+    <!-- Row 1: Main Partners -->
+    <div class="partners-row-label">Crypto Exchange &amp; Broker Partners</div>
+    <div class="social-grid" style="grid-template-columns:repeat(3,1fr);">
+
+      <a class="social-card" href="https://okx.cab/join/KBTC2026" target="_blank" rel="noopener">
+        <div class="social-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"/>
+            <line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/>
+          </svg>
+        </div>
+        <div class="social-name">OKX</div>
+        <div class="social-handle">Crypto Exchange</div>
+        <div class="social-btn">TRADE ↗</div>
+      </a>
+
+      <a class="social-card" href="https://investizo.com/?pid=904429" target="_blank" rel="noopener">
+        <div class="social-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+            <polyline points="16 7 22 7 22 13"/>
+          </svg>
+        </div>
+        <div class="social-name">Investizo</div>
+        <div class="social-handle">Forex Broker</div>
+        <div class="social-btn">TRADE ↗</div>
+      </a>
+
+      <a class="social-card" href="https://my.litefinance-kh.com/?uid=490808944" target="_blank" rel="noopener">
+        <div class="social-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="2" y="7" width="4" height="13"/><rect x="9" y="4" width="4" height="16"/><rect x="16" y="10" width="4" height="10"/>
+          </svg>
+        </div>
+        <div class="social-name">LiteFinance</div>
+        <div class="social-handle">Forex Broker</div>
+        <div class="social-btn">TRADE ↗</div>
+      </a>
+
     </div>
 
-    <!-- Other Exchanges -->
-    <div class="partners-group" style="margin-top:32px;">
-      <div class="partners-group-label">Other Exchanges</div>
-      <div class="partners-grid other">
-        <a href="https://www.binance.info/join?ref=KBTC168" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-name">Binance</div>
-          <div class="partner-tag">Crypto Exchange</div>
-          <div class="partner-btn">Join ↗</div>
-        </a>
-        <a href="https://promote.mexc.com/r/PEkFDD73" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-name">MEXC</div>
-          <div class="partner-tag">Crypto Exchange</div>
-          <div class="partner-btn">Join ↗</div>
-        </a>
-        <a href="https://partner.bitgetapp.com/bg/KBTC168" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-name">Bitget</div>
-          <div class="partner-tag">Crypto Exchange</div>
-          <div class="partner-btn">Join ↗</div>
-        </a>
-        <a href="https://partner.bytick.com/b/kbtc" target="_blank" rel="noopener" class="partner-card">
-          <div class="partner-name">Bybit</div>
-          <div class="partner-tag">Crypto Exchange</div>
-          <div class="partner-btn">Join ↗</div>
-        </a>
-      </div>
+    <!-- Row 2: Other Exchanges -->
+    <div class="partners-row-label" style="margin-top:40px;">Other Exchanges</div>
+    <div class="social-grid">
+
+      <a class="social-card" href="https://www.binance.info/join?ref=KBTC168" target="_blank" rel="noopener">
+        <div class="social-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l2.4 2.4-2.4 2.4-2.4-2.4zm4.8 4.8l2.4 2.4-2.4 2.4-2.4-2.4zm-9.6 0l2.4 2.4-2.4 2.4-2.4-2.4zm4.8 4.8l2.4 2.4-2.4 2.4-2.4-2.4zm4.8 0l2.4 2.4-2.4 2.4-2.4-2.4zm-9.6 0l2.4 2.4-2.4 2.4-2.4-2.4zm4.8 4.8l2.4 2.4-2.4 2.4-2.4-2.4z"/>
+          </svg>
+        </div>
+        <div class="social-name">Binance</div>
+        <div class="social-handle">@KBTC168</div>
+        <div class="social-btn">JOIN ↗</div>
+      </a>
+
+      <a class="social-card" href="https://promote.mexc.com/r/PEkFDD73" target="_blank" rel="noopener">
+        <div class="social-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polygon points="12 2 19 7 19 17 12 22 5 17 5 7"/>
+            <line x1="12" y1="2" x2="12" y2="22"/>
+          </svg>
+        </div>
+        <div class="social-name">MEXC</div>
+        <div class="social-handle">@PEkFDD73</div>
+        <div class="social-btn">JOIN ↗</div>
+      </a>
+
+      <a class="social-card" href="https://partner.bitgetapp.com/bg/KBTC168" target="_blank" rel="noopener">
+        <div class="social-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="social-name">Bitget</div>
+        <div class="social-handle">@KBTC168</div>
+        <div class="social-btn">JOIN ↗</div>
+      </a>
+
+      <a class="social-card" href="https://partner.bytick.com/b/kbtc" target="_blank" rel="noopener">
+        <div class="social-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M8 12h8M14 8l4 4-4 4"/>
+          </svg>
+        </div>
+        <div class="social-name">Bybit</div>
+        <div class="social-handle">@kbtc</div>
+        <div class="social-btn">JOIN ↗</div>
+      </a>
+
     </div>
   </div>
 </section>
