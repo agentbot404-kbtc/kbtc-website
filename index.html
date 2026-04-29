@@ -415,6 +415,68 @@
     .svc-card:hover .svc-arrow { opacity: 1; transform: translateY(0); border-color: var(--text); }
 
     /* ── Social ── */
+    /* ── Partners ── */
+    #partners { padding: 130px 0; border-top: 1px solid var(--border); }
+    .partners-group { margin-top: 64px; }
+    .partners-group-label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .partners-group-label::before {
+      content: ''; display: block; width: 16px; height: 1px; background: var(--muted);
+    }
+    .partners-grid {
+      display: grid; gap: 1px;
+      background: var(--border); border: 1px solid var(--border);
+    }
+    .partners-grid.main { grid-template-columns: repeat(3, 1fr); }
+    .partners-grid.other { grid-template-columns: repeat(4, 1fr); }
+    .partner-card {
+      background: var(--bg);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 16px; padding: 40px 28px;
+      text-decoration: none; color: var(--text);
+      position: relative; overflow: hidden;
+      transition: background 0.25s;
+    }
+    .partner-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(128,128,128,0.07) 0%, transparent 70%);
+      opacity: 0; transition: opacity 0.25s;
+    }
+    .partner-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: var(--text);
+      transform: scaleX(0); transition: transform 0.25s;
+    }
+    .partner-card:hover { background: var(--bg3); }
+    .partner-card:hover::before { opacity: 1; }
+    .partner-card:hover::after { transform: scaleX(1); }
+    .partner-name {
+      font-size: 16px; font-weight: 800;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .partner-tag {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .partner-btn {
+      margin-top: 4px;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 2px;
+      color: var(--dim); transition: all 0.2s;
+    }
+    .partner-card:hover .partner-btn { border-color: var(--text); color: var(--text); }
+    @media (max-width: 768px) {
+      .partners-grid.main { grid-template-columns: 1fr; }
+      .partners-grid.other { grid-template-columns: repeat(2, 1fr); }
+    }
+
     #social { padding: 130px 0; border-top: 1px solid var(--border); }
     .social-grid {
       display: grid; grid-template-columns: repeat(5, 1fr);
@@ -504,6 +566,7 @@
       <ul class="nav-links">
         <li><a href="#about" data-i18n="nav.about">About</a></li>
         <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#partners">Partners</a></li>
         <li><a href="#social" data-i18n="nav.connect">Connect</a></li>
       </ul>
       <div class="nav-controls">
@@ -659,6 +722,64 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PARTNERS ═══ -->
+<section id="partners">
+  <div class="container">
+    <div class="section-tag">Our Partners</div>
+    <h2 class="section-title">Trusted<br/>Partners.</h2>
+    <p class="section-desc">Exclusive partnerships with leading exchanges and brokers — giving KBTC members better rates, higher rebates, and priority support.</p>
+
+    <!-- Main Partners -->
+    <div class="partners-group">
+      <div class="partners-group-label">Main Partners — Crypto Exchange &amp; Broker</div>
+      <div class="partners-grid main">
+        <a href="https://okx.cab/join/KBTC2026" target="_blank" rel="noopener" class="partner-card">
+          <div class="partner-name">OKX</div>
+          <div class="partner-tag">Crypto Exchange</div>
+          <div class="partner-btn">Join ↗</div>
+        </a>
+        <a href="https://investizo.com/?pid=904429" target="_blank" rel="noopener" class="partner-card">
+          <div class="partner-name">Investizo</div>
+          <div class="partner-tag">Forex Broker</div>
+          <div class="partner-btn">Join ↗</div>
+        </a>
+        <a href="https://my.litefinance-kh.com/?uid=490808944" target="_blank" rel="noopener" class="partner-card">
+          <div class="partner-name">LiteFinance</div>
+          <div class="partner-tag">Forex Broker</div>
+          <div class="partner-btn">Join ↗</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Other Exchanges -->
+    <div class="partners-group" style="margin-top:32px;">
+      <div class="partners-group-label">Other Exchanges</div>
+      <div class="partners-grid other">
+        <a href="https://www.binance.info/join?ref=KBTC168" target="_blank" rel="noopener" class="partner-card">
+          <div class="partner-name">Binance</div>
+          <div class="partner-tag">Crypto Exchange</div>
+          <div class="partner-btn">Join ↗</div>
+        </a>
+        <a href="https://promote.mexc.com/r/PEkFDD73" target="_blank" rel="noopener" class="partner-card">
+          <div class="partner-name">MEXC</div>
+          <div class="partner-tag">Crypto Exchange</div>
+          <div class="partner-btn">Join ↗</div>
+        </a>
+        <a href="https://partner.bitgetapp.com/bg/KBTC168" target="_blank" rel="noopener" class="partner-card">
+          <div class="partner-name">Bitget</div>
+          <div class="partner-tag">Crypto Exchange</div>
+          <div class="partner-btn">Join ↗</div>
+        </a>
+        <a href="https://partner.bytick.com/b/kbtc" target="_blank" rel="noopener" class="partner-card">
+          <div class="partner-name">Bybit</div>
+          <div class="partner-tag">Crypto Exchange</div>
+          <div class="partner-btn">Join ↗</div>
+        </a>
+      </div>
     </div>
   </div>
 </section>
