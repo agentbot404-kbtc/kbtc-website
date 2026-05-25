@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KBTC — Professional Trading Platform</title>
+  <link rel="icon" type="image/png" href="kbtc-logo-new.png" />
   <style>
     /* ── Reset ── */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,8 +42,8 @@
       --text: #111111;
       --invert: #ffffff;
       --overlay: rgba(248,249,250,0.9);
-      --logo-filter: invert(1);
-      --logo-blend: multiply;
+      --logo-filter: none;
+      --logo-blend: normal;
       --gradient: linear-gradient(135deg, #0066ff, #00ccff);
     }
 
@@ -285,6 +286,15 @@
       border: 2px solid var(--primary);
       background: transparent;
       opacity: 0.3;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .cube-face img {
+      width: 70%; height: 70%;
+      object-fit: contain;
+      opacity: 0.8;
+      filter: var(--logo-filter);
+      background: transparent;
     }
     .cube-face.front  { transform: translateZ(130px); }
     .cube-face.back   { transform: rotateY(180deg) translateZ(130px); }
@@ -744,12 +754,12 @@
 <section id="hero">
   <div class="hero-3d" aria-hidden="true">
     <div class="cube-wrap">
-      <div class="cube-face front"></div>
-      <div class="cube-face back"></div>
-      <div class="cube-face left"></div>
-      <div class="cube-face right"></div>
-      <div class="cube-face top"></div>
-      <div class="cube-face bottom"></div>
+      <div class="cube-face front"><img src="kbtc-logo-new.png" alt="KBTC" /></div>
+      <div class="cube-face back"><img src="kbtc-logo-new.png" alt="KBTC" /></div>
+      <div class="cube-face left"><img src="kbtc-logo-new.png" alt="KBTC" /></div>
+      <div class="cube-face right"><img src="kbtc-logo-new.png" alt="KBTC" /></div>
+      <div class="cube-face top"><img src="kbtc-logo-new.png" alt="KBTC" /></div>
+      <div class="cube-face bottom"><img src="kbtc-logo-new.png" alt="KBTC" /></div>
     </div>
   </div>
   <div class="container">
